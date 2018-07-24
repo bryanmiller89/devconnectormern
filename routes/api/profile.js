@@ -13,12 +13,12 @@ const User = require('../../models/User');
 
 // @route   GET api/profile/test
 // @desc    Tests profile route
-// @access  Public route
+// @access  Public
 router.get('/test', (req, res) => res.json({ msg: 'Profile Works' }));
 
 // @route   GET api/profile
 // @desc    Get current users profile
-// @access  Private route
+// @access  Private
 router.get(
   '/',
   passport.authenticate('jwt', { session: false }),
@@ -38,9 +38,13 @@ router.get(
   }
 );
 
+// @route   Get api/profile/handle/:handle
+// @desc    Create or edit user profile
+// @access  Private
+
 // @route   POST api/profile
 // @desc    Create or edit user profile
-// @access  Private route
+// @access  Private
 router.post(
   '/',
   passport.authenticate('jwt', { session: false }),
