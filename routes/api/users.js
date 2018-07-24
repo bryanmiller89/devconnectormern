@@ -4,6 +4,8 @@ const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
+
+// Passport Authentication Middleware
 const passport = require('passport');
 
 // Load Input Validation
