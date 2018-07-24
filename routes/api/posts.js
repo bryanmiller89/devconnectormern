@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+
+// Mongoose Object Modeling Tool
 const mongoose = require('mongoose');
 
 // Passport Authentication Middleware

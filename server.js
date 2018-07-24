@@ -1,4 +1,6 @@
 const express = require('express');
+
+// Mongoose Object Modeling Tool
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
