@@ -7,7 +7,6 @@ import CommentForm from './CommentForm';
 import CommentFeed from './CommentFeed';
 import Spinner from '../common/Spinner';
 import { getPost } from '../../actions/postActions';
-import { POST_LOADING } from '../../actions/types';
 
 class Post extends Component {
   componentDidMount() {
