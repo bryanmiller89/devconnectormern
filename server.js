@@ -1,12 +1,7 @@
 const express = require('express');
-
-// Mongoose Object Modeling Tool
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
-// Passport Authentication Middleware
 const passport = require('passport');
-
 const path = require('path');
 
 const users = require('./routes/api/users');
@@ -19,13 +14,13 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// DB config
+// DB Config
 const db = require('./config/keys').mongoURI;
 
-// Connect to MongoDB through mongoose
+// Connect to MongoDB
 mongoose
   .connect(db)
-  .then(() => console.log('MongoDB connected'))
+  .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
 // Passport middleware
@@ -39,7 +34,7 @@ app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 
-// Serve static assets if in production
+// Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('client/build'));
@@ -51,4 +46,4 @@ if (process.env.NODE_ENV === 'production') {
 
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log(`Server running on port: ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
